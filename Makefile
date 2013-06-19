@@ -48,6 +48,17 @@ clean:
 	find . -name "*.gc*" -exec rm {} \;
 	rm -fr `find . -name "*.dSYM" -print`
 
+format:
+	astyle --style=kr \
+		-wLs2 \
+		--break-blocks \
+		--pad-paren-in \
+		--align-pointer=type \
+		--align-reference=type \
+		--max-code-length=80 \
+		--suffix=node \
+		$(SOURCES) $(HEADERS)
+
 install: all
 	install -d $(DESTDIR)/$(PREFIX)/lib/
 	install $(TARGET) $(DESTDIR)/$(PREFIX)/lib/
