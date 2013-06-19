@@ -1,1 +1,3 @@
-# Learn C The Hard Way -WIP #
+# c-skeleton
+
+c project skeleton
